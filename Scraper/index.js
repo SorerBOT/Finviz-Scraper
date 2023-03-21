@@ -9,7 +9,7 @@ async function scrape() {
     await scrapeCalendar("https://finviz.com/calendar.ashx");
     await sendDiscordMessage(); 
 }
-app.listen(8080, async () => {
+app.listen(8080, "0.0.0.0", async () => {
     console.log("App Running");
 
     while (true) {
