@@ -6,4 +6,5 @@ RUN npm install --production --silent && mv node_modules ../
 COPY . .
 RUN chown -R node /usr/src/app
 USER node
+EXPOSE 8080 
 CMD ["npm", "start"]
