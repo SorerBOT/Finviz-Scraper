@@ -4,5 +4,8 @@
     "dotenv": "^16.0.3",
     "puppeteer": "^19.7.5"
   },
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "start": "node ./Scraper/index.js"
+  }
 }
