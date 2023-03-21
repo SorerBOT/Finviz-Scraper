@@ -1,9 +1,10 @@
 /**
  * 
- * @param {Date} currentDate 
+ * @returns {newDate} the Date of last sunday 
  */
 
-function getLastSunday(currentDate) {
+function getLastSunday() {
+    const currentDate = new Date();
     const newDate = new Date(currentDate);
     newDate.setDate(newDate.getDate() - newDate.getDay());
 
