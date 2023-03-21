@@ -3,7 +3,7 @@ import getLastSunday from "./Utils/getLastSunday.js";
 
 const screenshotOptions = {
     path: `./images/${getLastSunday(new Date())}.png`,
-    type: "png"
+    type: "png",
 }
 const delay = ms => new Promise(res => setTimeout(res, ms));
 async function scrapeCalendar(url) {
@@ -15,9 +15,7 @@ async function scrapeCalendar(url) {
     await page.goto(url);
 
     const [el] = await page.$x("/html/body/div[2]/div/div");
-    //await el.screenshot(screenshotOptions);
-    await delay(50000); 
-    await page.screenshot(screenshotOptions);
+    await el.screenshot(screenshotOptions);
 
     await browser.close();
 }
