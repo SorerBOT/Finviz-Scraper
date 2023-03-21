@@ -5,7 +5,6 @@ const screenshotOptions = {
     path: `./images/${getLastSunday(new Date())}.png`,
     type: "png",
 }
-const delay = ms => new Promise(res => setTimeout(res, ms));
 async function scrapeCalendar(url) {
     const browser = await puppeteer.launch({
         executablePath: "/usr/bin/chromium"
