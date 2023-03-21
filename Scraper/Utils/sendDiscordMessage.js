@@ -13,12 +13,17 @@ const embed = new EmbedBuilder()
     .setFooter({ text: "Powered By Sorer#0341", iconURL: "https://avatars.githubusercontent.com/u/72152919?v=4" })
     .setAuthor({ name: "Trading News", url: "https://avatars.githubusercontent.com/u/72152919?v=4", iconURL: "https://i.imgur.com/QebkOyn.jpeg" });
 
-await webhookClient.send({
-    content: "",
-    embeds: [embed],
-    files: [
-        {
-            attachment: "./images/2023-03-19.png"
-        }
-    ]
-});
+
+async function sendDiscordMessage() {
+    await webhookClient.send({
+        content: "",
+        embeds: [embed],
+        files: [
+            {
+                attachment: `./images/${getLastSunday()}.png`
+            }
+        ]
+    });
+}
+
+export default sendDiscordMessage;

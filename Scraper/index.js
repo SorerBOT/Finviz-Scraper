@@ -1,11 +1,5 @@
 import scrapeCalendar from "./Utils/scrapeCalendar.js";
-import getLastSunday from "./Utils/getLastSunday.js";
+import sendDiscordMessage from "./Utils/sendDiscordMessage.js";
 
-dotenv.config();
-
-
-
-//await scrapeCalendar("https://finviz.com/calendar.ashx");
-
-
-console.error(error);
+await scrapeCalendar("https://finviz.com/calendar.ashx");
+await sendDiscordMessage(); 
