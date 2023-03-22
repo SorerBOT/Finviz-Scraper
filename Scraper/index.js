@@ -2,6 +2,7 @@ import scrapeCalendar from "./Utils/scrapeCalendar.js";
 import sendDiscordMessage from "./Utils/sendDiscordMessage.js";
 import nextInterval from "./Utils/nextInterval.js";
 import msToTime from "./Utils/msToTime.js";
+import cron from "node-cron";
 import express from "express";
 
 const app = express();
@@ -17,11 +18,7 @@ app.get("/", (req, res) => {
 
 app.listen(8080, "0.0.0.0", async () => {
     console.log("App Running");
-
-    //while (true) {
-    //    setTimeout(async () => {
-    //        await scrape();
-    //    }, nextInterval());
-    //}
-
+    cron.schedule("* * * * * Sunday", async () => {
+        await scrape();
+    });
 });
